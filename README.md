@@ -2,6 +2,7 @@ opencart-hybridauth
 ===================
 
 Open Source HybridAuth Bridge for OpenCart (Beta)
+
 Based on HybridAuth Library (http://hybridauth.sourceforge.net)
 Tested on OpenCart 1.5.6 +
 
@@ -26,5 +27,6 @@ Information:
 * Latest HybridAuth source on GitHub: http://github.com/hybridauth/hybridauth
 
 Donate:
-* BitCoin 1HtTN2LWxLCbzLiFxCGhAnLP38z2e54G6c
-* LiteCoin LSgSkssRpE6pjSry5jaGLWCCHxZDpQoDTU
+
+* BitCoin: 1HtTN2LWxLCbzLiFxCGhAnLP38z2e54G6c
+* LiteCoin: LSgSkssRpE6pjSry5jaGLWCCHxZDpQoDTU
