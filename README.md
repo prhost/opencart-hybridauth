@@ -12,6 +12,7 @@ Tested on OpenCart 1.5.6 +
 * Simple & powerfull GUI interface
 * Auto-generation country_id/zone_id (if provider exists)
 * Storage user identifiers in MD5 hash
+* Supports redirect to the referral page from (?referer=URL)
 * 32 provider drivers
 * 25 Open Source 32x32 media icons
 * 3 languages localization: English, Ukrainian, Rissian
@@ -34,6 +35,10 @@ Information:
 * Ukrainian OpenCart Community Page: http://opencart-ukraine.tumblr.com/post/95240095856/hybridauth-for-opencart-free-open-source-version
 * Order Professional Support: http://opencart-ukraine.tumblr.com/support
 * Latest HybridAuth source on GitHub: http://github.com/hybridauth/hybridauth
+
+Coming Soon:
+
+* Widget Module
 
 Donate:
 
