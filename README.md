@@ -1,19 +1,20 @@
 opencart-hybridauth
 ===================
 
-Open Source HybridAuth bridge for OpenCart (Beta)
+Open Source HybridAuth Bridge for OpenCart (Beta)
 Based on HybridAuth Library (http://hybridauth.sourceforge.net)
-Tested on OpenCart 1.5 +
+Tested on OpenCart 1.5.6 +
 
-1. No pacth core files
-2. No vQmod required
-3. No DB structure modification
+* No modify core files
+* No vQmod required
+* No DB structure modification
+* 100% Free & OpenSource
 
-Installation:
+Install:
 
-1. Copy upload content to store root
-2. Go to the administrative panel & install the OpenCart HybridAuth module
-3. Select & config providers 
+1. Copy upload content into the root
+2. Go to the admin panel & install the OpenCart HybridAuth module
+3. Сonfigure it to providers 
 4. Add simple code to your template from example.tpl
 
 Information:
@@ -25,5 +26,5 @@ Information:
 * Latest HybridAuth source on GitHub: http://github.com/hybridauth/hybridauth
 
 Donate:
-BitCoin 1HtTN2LWxLCbzLiFxCGhAnLP38z2e54G6c
-LiteCoin LSgSkssRpE6pjSry5jaGLWCCHxZDpQoDTU
+* BitCoin 1HtTN2LWxLCbzLiFxCGhAnLP38z2e54G6c
+* LiteCoin LSgSkssRpE6pjSry5jaGLWCCHxZDpQoDTU
