@@ -14,7 +14,7 @@ Tested on OpenCart 1.5.6 +
 * Storage user identifiers in MD5 hash
 * 32 provider drivers
 * 25 Open Source 32x32 media icons
-* 3 languages: English, Ukrainian, Rissian
+* 3 languages localization: English, Ukrainian, Rissian
 * 100% Compatible
 * 100% Free & OpenSource
 
