@@ -14,6 +14,7 @@ Tested on OpenCart 1.5.6 +
 * Storage user identifiers in MD5 hash
 * 32 provider drivers
 * 25 Open Source 32x32 media icons
+* 3 languages: English, Ukrainian, Rissian
 * 100% Compatible
 * 100% Free & OpenSource
 
@@ -30,7 +31,7 @@ Information:
 * Basic images set: /image/themezee_social_icons
 * Additional drivers: /system/library/Hybrid/Providers
 * Issues: http://github.com/shaman/opencart-hybridauth/issues
-* Ukrainian OpenCart Community: http://opencart-ukraine.tumblr.com
+* Ukrainian OpenCart Community Page: http://opencart-ukraine.tumblr.com/post/95240095856/hybridauth-for-opencart-free-open-source-version
 * Order Professional Support: http://opencart-ukraine.tumblr.com/support
 * Latest HybridAuth source on GitHub: http://github.com/hybridauth/hybridauth
 
