@@ -31,7 +31,7 @@ Information:
 * Additional drivers: /system/library/Hybrid/Providers
 * Issues: http://github.com/shaman/opencart-hybridauth/issues
 * Ukrainian OpenCart Community: http://opencart-ukraine.tumblr.com
-* Order Professional Installation or Primary Support: http://opencart-ukraine.tumblr.com/support
+* Order Professional Support: http://opencart-ukraine.tumblr.com/support
 * Latest HybridAuth source on GitHub: http://github.com/hybridauth/hybridauth
 
 Donate:
