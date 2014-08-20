@@ -28,5 +28,5 @@ Information:
 
 Donate:
 
-* BitCoin: 1HtTN2LWxLCbzLiFxCGhAnLP38z2e54G6c
-* LiteCoin: LSgSkssRpE6pjSry5jaGLWCCHxZDpQoDTU
+* BitCoin 1HtTN2LWxLCbzLiFxCGhAnLP38z2e54G6c
+* LiteCoin LSgSkssRpE6pjSry5jaGLWCCHxZDpQoDTU
