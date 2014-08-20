@@ -9,6 +9,12 @@ Tested on OpenCart 1.5.6 +
 * No modify core files
 * No vQmod required
 * No DB structure modification
+* Simple & powerfull GUI interface
+* Auto-generation country_id/zone_id (if provider exists)
+* Storage user identifiers in MD5 hash
+* 32 provider drivers
+* 25 Open Source 32x32 media icons
+* 100% Compatible
 * 100% Free & OpenSource
 
 Install:
@@ -16,7 +22,8 @@ Install:
 1. Copy upload content into the root
 2. Go to the admin panel & install the OpenCart HybridAuth module
 3. Сonfigure it to providers 
-4. Add simple code to your template from example.tpl
+4. Import SQL dump
+5. Add simple code to your template from example.tpl
 
 Information:
 
