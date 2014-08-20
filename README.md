@@ -18,11 +18,11 @@ Installation:
 
 Information:
 
-Basic images set: /image/themezee_social_icons
-Additional drivers: /system/library/Hybrid/Providers
-Issues: http://github.com/shaman/opencart-hybridauth/issues
-Ukrainian OpenCart Community: http://opencart-ukraine.tumblr.com
-Latest HybridAuth source on GitHub: http://github.com/hybridauth/hybridauth
+* Basic images set: /image/themezee_social_icons
+* Additional drivers: /system/library/Hybrid/Providers
+* Issues: http://github.com/shaman/opencart-hybridauth/issues
+* Ukrainian OpenCart Community: http://opencart-ukraine.tumblr.com
+* Latest HybridAuth source on GitHub: http://github.com/hybridauth/hybridauth
 
 Donate:
 BitCoin 1HtTN2LWxLCbzLiFxCGhAnLP38z2e54G6c
