@@ -19,8 +19,8 @@ Tested on OpenCart 1.5.6 +
 
 Install:
 
-1. Copy upload content into the root
-2. Go to the admin panel & install the OpenCart HybridAuth module
+1. Copy 'upload' content into the root
+2. Go to the admin panel & install OpenCart HybridAuth module
 3. Сonfigure it to providers 
 4. Import SQL dump
 5. Add simple code to your template from example.tpl
