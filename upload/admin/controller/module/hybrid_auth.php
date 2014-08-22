@@ -39,6 +39,8 @@ class ControllerModuleHybridAuth extends Controller {
 
         // Save Incoming Data
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+            
+            // todo: add sort_order support
             $this->model_setting_setting->editSetting('hybrid_auth', $this->request->post);
 
             $this->session->data['success'] = $this->language->get('text_success');
