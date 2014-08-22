@@ -62,7 +62,8 @@ class ControllerHybridAuth extends Controller {
         $settings = $this->config->get('hybrid_auth');
         foreach ($settings as $config) {
             $this->_config['providers'][$config['provider']] = array('enabled' => (bool) $config['enabled'],
-                                                                     'keys'    => array('key'    => $config['key'],
+                                                                     'keys'    => array('id'     => $config['key'],
+                                                                                        'key'    => $config['key'],
                                                                                         'secret' => $config['secret'],
                                                                                         'scope'  => $config['scope']));
         }
