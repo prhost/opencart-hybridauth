@@ -29,24 +29,20 @@
 class ControllerHybridAuth extends Controller {
 
     private $_config = array();
+    private $_redirect;
 
     public function index() {
-
-        // Get redirect url
-        if (isset($this->request->get['redirect'])) {
-            $this->session->data['redirect'] = $this->request->get['redirect'];
-        } else {
-            $this->url->link('common/home');
-        }
+        
+        $this->_prepare();
 
         // Check if Logged
         if ($this->customer->isLogged()) {
-            $this->redirect($this->session->data['redirect']);
+            $this->redirect($this->_redirect);
         }
 
         // Check if module is Enabled
         if (!$this->config->get('hybrid_auth_status')) {
-            $this->redirect($this->session->data['redirect']);
+            $this->redirect($this->_redirect);
         }
 
         // Dependencies
@@ -72,7 +68,7 @@ class ControllerHybridAuth extends Controller {
         if (isset($this->request->get['provider'])) {
             $provider = $this->request->get['provider'];
         } else {
-            $this->redirect($this->session->data['redirect']);
+            $this->redirect($this->_redirect);
         }
 
         try {
@@ -91,7 +87,7 @@ class ControllerHybridAuth extends Controller {
                 $this->model_hybrid_auth->login($customer_id);
 
                 // 1.2 Redirect to Refer Page
-                $this->redirect($this->session->data['redirect']);
+                $this->redirect($this->_redirect);
             }
 
 
@@ -171,7 +167,7 @@ class ControllerHybridAuth extends Controller {
             $this->model_hybrid_auth->login($customer_id);
 
             // 3.4 - redirect to Refer Page
-            $this->redirect($this->session->data['redirect']);
+            $this->redirect($this->_redirect);
 
        } catch (Exception $e) {
 
@@ -200,6 +196,8 @@ class ControllerHybridAuth extends Controller {
 
 
     public function process() {
+        
+        $this->_prepare();
 
         // Dependencies
         require_once(DIR_SYSTEM . 'library/Hybrid/Auth.php');
@@ -207,4 +205,23 @@ class ControllerHybridAuth extends Controller {
 
         Hybrid_Endpoint::process();
     }
+    
+    
+    private function _prepare() {
+
+        // Some OpenAPI services return the encoded URL
+        if (isset($this->request->get)) {
+            foreach ($this->request->get as $key => $value) {
+                $this->request->get[str_replace('amp;', '', $key)] = $value;
+            }
+        }
+
+        // Base64 URL Decode
+        if (isset($this->request->get['redirect'])) {
+            $this->_redirect = base64_decode($this->request->get['redirect']);
+        } else {
+            $this->_redirect = $this->url->link('account/account');
+        }
+    }
+    
 }
