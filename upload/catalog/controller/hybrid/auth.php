@@ -64,10 +64,20 @@ class ControllerHybridAuth extends Controller {
                                                                                         'scope'  => $config['scope']));
         }
 
+
         // Receive request
         if (isset($this->request->get['provider'])) {
             $provider = $this->request->get['provider'];
         } else {
+
+            // Save error to the System Log
+            $this->log->write('Missing application provider.');
+
+            // Set Message
+            $this->session->data['error'] = sprintf("An error occurred, please <a href=\"%s\">notify</a> the administrator.",
+                                                    $this->url->link('information/contact'));
+
+            // Redirect to the Login Page
             $this->redirect($this->_redirect);
         }
 
