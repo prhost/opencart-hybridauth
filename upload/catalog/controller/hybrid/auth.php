@@ -209,7 +209,7 @@ class ControllerHybridAuth extends Controller {
     
     private function _prepare() {
 
-        // Some OpenAPI services return the encoded URL
+        // Some API returns encoded URL
         if (isset($this->request->get)) {
             foreach ($this->request->get as $key => $value) {
                 $this->request->get[str_replace('amp;', '', $key)] = $value;
