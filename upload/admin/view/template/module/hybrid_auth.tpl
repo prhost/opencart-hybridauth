@@ -156,7 +156,7 @@ function addRow() {
   html += '        <option value="0"><?php echo $text_disabled; ?></option>';
   html += '      </select>';
   html += '    </td>';
-	html += '    <td class="left"><input type="text" name="hybrid_auth[' + row + '][keys]" value="" size="50" /></td>';
+	html += '    <td class="left"><input type="text" name="hybrid_auth[' + row + '][key]" value="" size="50" /></td>';
 	html += '    <td class="left"><input type="text" name="hybrid_auth[' + row + '][secret]" value="" size="50" /></td>';
 	html += '    <td class="left"><input type="text" name="hybrid_auth[' + row + '][scope]" value="" size="50" /></td>';
 	html += '    <td class="right"><input type="text" name="hybrid_auth[' + row + '][sort_order]" value="' + row + '" size="3" /></td>';
