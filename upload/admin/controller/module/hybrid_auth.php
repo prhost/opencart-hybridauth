@@ -40,7 +40,18 @@ class ControllerModuleHybridAuth extends Controller {
         // Save Incoming Data
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
             
-            // todo: add sort_order support
+            // Prepare Sort Order
+            if (isset($this->request->post['hybrid_auth'])) {
+                $sort_order = array();
+
+                foreach ($this->request->post['hybrid_auth'] as $key => $value) {
+                    $sort_order[$key] = $value['sort_order'];
+                }
+
+                array_multisort($sort_order, SORT_ASC, $this->request->post['hybrid_auth']);
+            }
+            
+            // Edit Settings
             $this->model_setting_setting->editSetting('hybrid_auth', $this->request->post);
 
             $this->session->data['success'] = $this->language->get('text_success');
