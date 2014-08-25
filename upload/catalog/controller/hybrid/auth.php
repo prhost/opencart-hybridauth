@@ -220,9 +220,16 @@ class ControllerHybridAuth extends Controller {
     private function _prepare() {
 
         // Some API returns encoded URL
-        if (isset($this->request->get)) {
+        if (isset($this->request->get) && isset($_GET)) {
+
+            // Prepare for OpenCart
             foreach ($this->request->get as $key => $value) {
                 $this->request->get[str_replace('amp;', '', $key)] = $value;
+            }
+
+            // Prepare for Library
+            foreach ($_GET as $key => $value) {
+                $_GET[str_replace('amp;', '', $key)] = $value;
             }
         }
 
