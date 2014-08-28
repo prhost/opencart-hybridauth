@@ -42,5 +42,5 @@ Coming Soon:
 
 Donate:
 
-* BitCoin 1HtTN2LWxLCbzLiFxCGhAnLP38z2e54G6c
-* LiteCoin LSgSkssRpE6pjSry5jaGLWCCHxZDpQoDTU
+* BitCoin 1KpXqFRTX3XiPBeBc7mf8yrwMEHVDbkhF3
+* LiteCoin Lb6WU3x28hpxLKHj7AVRZZkgs4tfCDg7jb
