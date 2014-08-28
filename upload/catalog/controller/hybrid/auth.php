@@ -51,7 +51,7 @@ class ControllerHybridAuth extends Controller {
         $this->load->model('hybrid/auth');
 
         // Load Config
-        $this->_config['base_url']   = $this->url->link('hybrid/auth/process');
+        $this->_config['base_url']   = HTTPS_SERVER . 'hybridauth.php';
         $this->_config['debug_file'] = DIR_SYSTEM . 'logs/hybridauth.txt';
         $this->_config['debug_mode'] = (bool) $this->config->get('hybrid_auth_debug');
 
@@ -202,18 +202,6 @@ class ControllerHybridAuth extends Controller {
 
             $this->log->write($error);
        }
-    }
-
-
-    public function process() {
-        
-        $this->_prepare();
-
-        // Dependencies
-        require_once(DIR_SYSTEM . 'library/Hybrid/Auth.php');
-        require_once(DIR_SYSTEM . 'library/Hybrid/Endpoint.php');
-
-        Hybrid_Endpoint::process();
     }
     
     
