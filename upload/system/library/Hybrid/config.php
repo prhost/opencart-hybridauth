@@ -18,7 +18,7 @@ return
 
 			"Google" => array (
 				"enabled" => true,
-				"keys"    => array ( "id" => "882463562448-qjr85dar8f3t4poa9dgke23leb36q2po.apps.googleusercontent.com", "secret" => "YZQRn7gxIamwfuCtQ-nmHPT6" ),
+				"keys"    => array ( "id" => "", "secret" => "" ),
 			),
 
 			"Facebook" => array (
@@ -28,7 +28,7 @@ return
 
 			"Twitter" => array (
 				"enabled" => true,
-				"keys"    => array ( "key" => "3YVsLzawYgSxnepYbyC0UVL0l", "secret" => "I4TMlWh9VrBi6yZ1VtYeOePhUyT6K9nmeuKANL41zorjHKWULj" )
+				"keys"    => array ( "key" => "", "secret" => "" )
 			),
 		),
 
