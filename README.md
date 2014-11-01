@@ -13,6 +13,7 @@ Tested on OpenCart 1.5.6 +
 * Auto-generation country_id/zone_id (if provider exists)
 * Storage user identifiers in MD5 hash
 * Supports redirect to the referral page from ?referer=base64_encode(URL)
+* Supports popup auth
 * 32 provider drivers
 * 25 Open Source 32x32 media icons
 * 3 languages localization: English, Ukrainian, Rissian
