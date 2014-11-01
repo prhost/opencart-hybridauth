@@ -229,4 +229,16 @@ class ControllerHybridAuth extends Controller {
         }
     }
     
+    
+    public function success() {
+
+        if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/hybrid/success.tpl')) {
+            $this->template = $this->config->get('config_template') . '/template/hybrid/success.tpl';
+        } else {
+            $this->template = 'default/template/hybrid/success.tpl';
+        }
+
+        $this->response->setOutput($this->render());
+    }
+    
 }
