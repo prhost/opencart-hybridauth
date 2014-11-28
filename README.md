@@ -27,7 +27,7 @@ Install:
 3. Сonfigure it to providers 
 4. Import SQL dump
 5. Add simple code to your template from example.tpl
-6. Add next code after line public function deleteCustomer($customer_id) { in file admin/model/sale/customer.php : $this->db->query("DELETE FROM " . DB_PREFIX . "customer_authentication WHERE customer_id = '" . (int)$customer_id . "'");
+6. After line: public function deleteCustomer($customer_id) { in file admin/model/sale/customer.php add next code: $this->db->query("DELETE FROM " . DB_PREFIX . "customer_authentication WHERE customer_id = '" . (int)$customer_id . "'");
 
 Information:
 
