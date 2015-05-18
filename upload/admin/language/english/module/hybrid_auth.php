@@ -42,7 +42,7 @@ $_['entry_debug']         = 'Debug Mode';
 $_['entry_provider']      = 'Provider';
 $_['entry_key']           = 'Key';
 $_['entry_secret']        = 'Secret';
-$_['entry_scope']         = 'Flags (optional)';
+$_['entry_scope']         = 'Scope (optional)';
 $_['entry_sort_order']    = 'Sort Order';
 
 // Button

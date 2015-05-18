@@ -10,7 +10,6 @@
  * http://www.gnu.org/copyleft/gpl.html
  * If you did not receive a copy of the license and are unable to
  * obtain it through the world-wide-web, please send an email
-
  *
  * @category   OpenCart
  * @package    OCU HybridAuth
@@ -19,20 +18,20 @@
  */
 
 
-
 /**
  * @category   OpenCart
  * @package    OCU HybridAuth
  * @copyright  Copyright (c) 2011 Eugene Lifescale by OpenCart Ukrainian Community (http://opencart-ukraine.tumblr.com)
  */
-
-class ControllerHybridAuth extends Controller {
+class ControllerHybridAuth extends Controller
+{
 
     private $_config = array();
     private $_redirect;
 
-    public function index() {
-        
+    public function index()
+    {
+
         $this->_prepare();
 
         // Check if Logged
@@ -51,17 +50,20 @@ class ControllerHybridAuth extends Controller {
         $this->load->model('hybrid/auth');
 
         // Load Config
-        $this->_config['base_url']   = HTTPS_SERVER . 'hybridauth.php';
+        $this->_config['base_url'] = HTTPS_SERVER . 'hybridauth.php';
         $this->_config['debug_file'] = DIR_SYSTEM . 'logs/hybridauth.txt';
-        $this->_config['debug_mode'] = (bool) $this->config->get('hybrid_auth_debug');
+        $this->_config['debug_mode'] = (bool)$this->config->get('hybrid_auth_debug');
 
         $settings = $this->config->get('hybrid_auth');
         foreach ($settings as $config) {
-            $this->_config['providers'][$config['provider']] = array('enabled' => (bool) $config['enabled'],
-                                                                     'keys'    => array('id'     => $config['key'],
-                                                                                        'key'    => $config['key'],
-                                                                                        'secret' => $config['secret'],
-                                                                                        'scope'  => $config['scope']));
+            $this->_config['providers'][$config['provider']] = array(
+                'enabled' => (bool)$config['enabled'],
+                'keys'    => array(
+                    'id'     => $config['key'],
+                    'key'    => $config['key'],
+                    'secret' => $config['secret']),
+                'scope'   => $config['scope']
+            );
         }
 
 
@@ -75,7 +77,7 @@ class ControllerHybridAuth extends Controller {
 
             // Set Message
             $this->session->data['error'] = sprintf("An error occurred, please <a href=\"%s\">notify</a> the administrator.",
-                                                    $this->url->link('information/contact'));
+                $this->url->link('information/contact'));
 
             // Redirect to the Login Page
             $this->redirect($this->_redirect);
@@ -105,7 +107,7 @@ class ControllerHybridAuth extends Controller {
             // if authentication does not exist, but the email address returned  by the provider does exist in database,
             // then we tell the user that the email  is already in use
             // but, its up to you if you want to associate the authentication with the user having the address email in the database
-            if ($user_profile->email){
+            if ($user_profile->email) {
                 $customer_id = $this->model_hybrid_auth->findCustomerByEmail($user_profile->email);
 
                 if ($customer_id) {
@@ -143,34 +145,34 @@ class ControllerHybridAuth extends Controller {
                       'postcode'   => $user_profile->zip,
                       'country_id' => $this->model_hybrid_auth->findCountry($user_profile->country),
                       'zone_id'    => $this->model_hybrid_auth->findZone($user_profile->region),
-                      'password'   => substr(rand().microtime(), 0, 6)));
+                      'password'   => substr(rand() . microtime(), 0, 6)));
 
             // 3.2 - create a new authentication for him
             $this->model_hybrid_auth->addAuthentication(
-                array('customer_id' => (int) $customer_id,
-                    'provider' => $provider,
-                    'identifier' => $user_profile->identifier,
-                    'web_site_url' => $user_profile->webSiteURL,
-                    'profile_url' => $user_profile->profileURL,
-                    'photo_url' => $user_profile->photoURL,
-                    'display_name' => $user_profile->displayName,
-                    'description' => $user_profile->description,
-                    'first_name' => $user_profile->firstName,
-                    'last_name' => $user_profile->lastName,
-                    'gender' => $user_profile->gender,
-                    'language' => $user_profile->language,
-                    'age' => $user_profile->age,
-                    'birth_day' => $user_profile->birthDay,
-                    'birth_month' => $user_profile->birthMonth,
-                    'birth_year' => $user_profile->birthYear,
-                    'email' => $user_profile->email,
-                    'email_verified' => $user_profile->emailVerified,
-                    'phone' => $user_profile->phone,
-                    'address' => $user_profile->address,
-                    'country' => $user_profile->country,
-                    'region' => $user_profile->region,
-                    'city' => $user_profile->city,
-                    'zip' => $user_profile->zip));
+                array('customer_id'    => (int)$customer_id,
+                      'provider'       => $provider,
+                      'identifier'     => $user_profile->identifier,
+                      'web_site_url'   => $user_profile->webSiteURL,
+                      'profile_url'    => $user_profile->profileURL,
+                      'photo_url'      => $user_profile->photoURL,
+                      'display_name'   => $user_profile->displayName,
+                      'description'    => $user_profile->description,
+                      'first_name'     => $user_profile->firstName,
+                      'last_name'      => $user_profile->lastName,
+                      'gender'         => $user_profile->gender,
+                      'language'       => $user_profile->language,
+                      'age'            => $user_profile->age,
+                      'birth_day'      => $user_profile->birthDay,
+                      'birth_month'    => $user_profile->birthMonth,
+                      'birth_year'     => $user_profile->birthYear,
+                      'email'          => $user_profile->email,
+                      'email_verified' => $user_profile->emailVerified,
+                      'phone'          => $user_profile->phone,
+                      'address'        => $user_profile->address,
+                      'country'        => $user_profile->country,
+                      'region'         => $user_profile->region,
+                      'city'           => $user_profile->city,
+                      'zip'            => $user_profile->zip));
 
             // 3.3 - login
             $this->model_hybrid_auth->login($customer_id);
@@ -178,33 +180,48 @@ class ControllerHybridAuth extends Controller {
             // 3.4 - redirect to Refer Page
             $this->redirect($this->_redirect);
 
-       } catch (Exception $e) {
+        } catch (Exception $e) {
 
             // Error Descriptions
-            switch ($e->getCode()){
-                case 0 : $error = "Unspecified error."; break;
-                case 1 : $error = "Hybriauth configuration error."; break;
-                case 2 : $error = "Provider not properly configured."; break;
-                case 3 : $error = "Unknown or disabled provider."; break;
-                case 4 : $error = "Missing provider application credentials."; break;
-                case 5 : $error = "Authentication failed. The user has canceled the authentication or the provider refused the connection."; break;
-                case 6 : $error = "User profile request failed. Most likely the user is not connected to the provider and he should to authenticate again.";
-                         $adapter->logout();
-                         break;
-                case 7 : $error = "User not connected to the provider.";
-                         $adapter->logout();
-                         break;
+            switch ($e->getCode()) {
+                case 0 :
+                    $error = "Unspecified error.";
+                    break;
+                case 1 :
+                    $error = "Hybriauth configuration error.";
+                    break;
+                case 2 :
+                    $error = "Provider not properly configured.";
+                    break;
+                case 3 :
+                    $error = "Unknown or disabled provider.";
+                    break;
+                case 4 :
+                    $error = "Missing provider application credentials.";
+                    break;
+                case 5 :
+                    $error = "Authentication failed. The user has canceled the authentication or the provider refused the connection.";
+                    break;
+                case 6 :
+                    $error = "User profile request failed. Most likely the user is not connected to the provider and he should to authenticate again.";
+                    $adapter->logout();
+                    break;
+                case 7 :
+                    $error = "User not connected to the provider.";
+                    $adapter->logout();
+                    break;
             }
 
             $error .= "\n\nHybridAuth Error: " . $e->getMessage();
             $error .= "\n\nTrace:\n " . $e->getTraceAsString();
 
             $this->log->write($error);
-       }
+        }
     }
-    
-    
-    private function _prepare() {
+
+
+    private function _prepare()
+    {
 
         // Some API returns encoded URL
         if (isset($this->request->get) && isset($_GET)) {
@@ -227,9 +244,10 @@ class ControllerHybridAuth extends Controller {
             $this->_redirect = $this->url->link('account/account');
         }
     }
-    
-    
-    public function success() {
+
+
+    public function success()
+    {
 
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/hybrid/success.tpl')) {
             $this->template = $this->config->get('config_template') . '/template/hybrid/success.tpl';
@@ -239,5 +257,5 @@ class ControllerHybridAuth extends Controller {
 
         $this->response->setOutput($this->render());
     }
-    
+
 }
